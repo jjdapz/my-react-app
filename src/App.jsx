@@ -12,8 +12,9 @@ export default function Board() {
   const [squares, setSquares] = useState(Array(9).fill(null));
 
   function handleClick(i) {
+    const [xIsNext, setXIsNext] = useState(true);
     const nextSquares = squares.slice();
-    nextSquares[i] = "X";
+    nextSquares[i] = 'X';
     setSquares(nextSquares);
   }
 
@@ -31,7 +32,7 @@ export default function Board() {
       </div>
       <div className="board-row">
         <Square value={squares[6]} onSquareClick={() => handleClick(6)} />
-        <Square value={squares[6]} onSquareClick={() => handleClick(7)} />
+        <Square value={squares[7]} onSquareClick={() => handleClick(7)} />
         <Square value={squares[8]} onSquareClick={() => handleClick(8)} />
       </div>
     </>
